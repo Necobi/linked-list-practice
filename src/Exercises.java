@@ -1,5 +1,32 @@
 public class Exercises {
-    /**
+    public static void main(String[]args){
+     ListNode first = new ListNode();
+        first.data = 4;
+        //first.data = 4;
+
+        ListNode second = new ListNode();
+        second.data = -6;
+        //second.data = 2;
+
+        ListNode third = new ListNode();
+        third.data = 7;
+        //third.data = 10;
+
+        ListNode fourth = new ListNode();
+        fourth.data = -3;
+        //fourth.data = 1;
+
+        ListNode fifth = new ListNode();
+        fifth.data = 8;
+
+        first.next = second;
+        second.next = third;
+        third.next = fourth;
+        fourth.next = fifth;
+        int result = countNegative(first);
+        //int result = sum(first);
+        System.out.println(result);
+    }/* 
      * Returns the sum of the values in the linked list.
      * 
      * Returns 0 if head is null.
@@ -12,7 +39,20 @@ public class Exercises {
      * @return sum of the values in the list
      */
     public static int sum(ListNode head) {
-        return -1;
+        int sum =0;
+         ListNode current = head;
+         //until end of list
+        while(current!=null){
+           sum+=current.data;
+            // move current to the next node
+            current=current.next;
+        }
+        if(sum>0){
+            return sum;
+        }else{
+            return 0;
+        }
+        
     }
 
     /**
@@ -28,8 +68,23 @@ public class Exercises {
      * @return a count of the negative values in the list
      */
     public static int countNegative(ListNode head) {
-        return -1;
+        int count =0;
+        ListNode current = head;
+        if(head==null){
+            return count;
+        }else{
+          while(current!=null){
+           if(current.data<0){
+            count++;
+            // move current to the next node
+           }
+           current=current.next; 
+         }
+            
+        }
+        return count;
     }
+
 
     /**
      * Adds a new ListNode with the given value to the end of the linked list.
@@ -46,6 +101,16 @@ public class Exercises {
      * @param toAdd the value to append in a new node
      */
     public static void addToEnd(ListNode head, int toAdd) {
+        ListNode addToEnd = new ListNode();
+        addToEnd.data=toAdd;
+         
+        ListNode current = head;
+
+        while(current.next!=null){
+            current=current.next;
+        }
+        current.next=addToEnd;
+
 
     }
 
@@ -84,4 +149,5 @@ public class Exercises {
     public static boolean isIncreasing(ListNode head) {
         return false;
     }
+
 }
