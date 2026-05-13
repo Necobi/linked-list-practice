@@ -1,32 +1,41 @@
 public class Exercises {
     public static void main(String[]args){
      ListNode first = new ListNode();
-        first.data = 4;
+        first.data = 8;
+        //first.data = 4;
         //first.data = 4;
 
         ListNode second = new ListNode();
-        second.data = -6;
+        second.data = 3;
+        //second.data = -6;
         //second.data = 2;
 
         ListNode third = new ListNode();
-        third.data = 7;
+        third.data = 2;
+        //third.data = 7;
         //third.data = 10;
 
         ListNode fourth = new ListNode();
-        fourth.data = -3;
+        fourth.data = -7;
+        //fourth.data = -3;
         //fourth.data = 1;
 
-        ListNode fifth = new ListNode();
-        fifth.data = 8;
+        //ListNode fifth = new ListNode();
+        //fifth.data = 8;
 
         first.next = second;
         second.next = third;
         third.next = fourth;
-        fourth.next = fifth;
-        int result = countNegative(first);
+        //fourth.next = fifth;
+
+        addToEnd(first, 99);
+        //int result = countNegative(first);
         //int result = sum(first);
-        System.out.println(result);
-    }/* 
+
+        //System.out.println(result);
+        System.out.print(fourth.next.data);
+    }
+    /* 
      * Returns the sum of the values in the linked list.
      * 
      * Returns 0 if head is null.
@@ -127,6 +136,16 @@ public class Exercises {
      * @param head the head of the list
      */
     public static void makePositive(ListNode head) {
+        ListNode current = head;
+
+        while(current!=null){
+            if(current.data>=0){
+                current.data = current.data;
+            }else{
+                current.data = current.data*-1;
+            }
+            current=current.next;
+        }
 
     }
 
